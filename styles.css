@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1a237e;
+}
+
+.drop-zone {
+    border: 2px dashed #3f51b5;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    background: white;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+}
+
+.drop-zone:hover { background: #e8eaf6; }
+.drop-zone.dragover { background: #c5cae9; }
+
+.controls {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #3f51b5;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover { background: #1a237e; }
+button:disabled { background: #9fa8da; }
+
+.book {
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    min-height: 500px;
+    max-height: 70vh;
+    overflow-y: auto;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.voice-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 5px;
+}
+
+select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #3f51b5;
+}
+
+.rate-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input[type="range"] {
+    width: 120px;
+}
+
+.highlighted {
+    background-color: #ffeb3b;
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
+.progress-bar {
+    height: 4px;
+    background: #e8eaf6;
+    margin: 1rem 0;
+    border-radius: 2px;
+}
+
+.progress {
+    height: 100%;
+    background: #3f51b5;
+    width: 0;
+    transition: width 0.3s;
+}
+
+@media (max-width: 600px) {
+    .controls, .voice-controls {
+        flex-direction: column;
+    }
+
+    button, select, .rate-control {
+        width: 100%;
+    }
+
+    .book {
+        padding: 1rem;
+        font-size: 14px;
+    }
+
+    body {
+        padding: 0.5rem;
+    }
+}

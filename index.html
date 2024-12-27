@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Reader</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PDF Reader</h1>
+        </div>
+
+        <div class="drop-zone" id="dropZone">
+            <p>Drop PDF here or click to upload</p>
+            <input type="file" id="fileInput" accept=".pdf,.txt" style="display: none">
+        </div>
+
+        <div class="voice-controls">
+            <select id="voiceSelect">
+                <option value="">Select Voice</option>
+            </select>
+            <div class="rate-control">
+                <label>Speed:</label>
+                <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1">
+                <span id="rateValue">1x</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="playBtn" disabled>Play</button>
+            <button id="pauseBtn" disabled>Pause</button>
+            <button id="stopBtn" disabled>Stop</button>
+            <button id="prevBtn" disabled>Previous Page</button>
+            <button id="nextBtn" disabled>Next Page</button>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="book" id="contentDisplay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
